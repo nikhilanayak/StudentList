@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include <vector>
 
 
@@ -51,11 +52,12 @@ void del(student_list* list){
 			return;
 		}
 	}
+	std::cout << "Couldn't Find That Student\n";
 
 }
 
 void print_student(student* s){
-	std::cout << "First Name: " << s->first_name << ", Last Name: " << s->last_name << ", Student ID: " << s->student_id << ", GPA: " << s->GPA << "\n";
+	std::cout << "First Name: " << s->first_name << ", Last Name: " << s->last_name << ", Student ID: " << s->student_id << ", GPA: " << std::setprecision(3) << s->GPA << "\n";
 }
 
 void print(student_list* list){
