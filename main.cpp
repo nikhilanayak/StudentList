@@ -1,3 +1,10 @@
+/*
+Written By: Nikhil Nayak
+Date: 10/20/21
+Description: A program written in c++ that serves as an interface and database for students designed to keep track of first name, last name, student id, and GPA.
+Commands: ADD, QUIT, DELETE, PRINT
+*/
+
 #include <iostream>
 #include <iomanip>
 #include <vector>
