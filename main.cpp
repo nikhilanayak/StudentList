@@ -10,17 +10,17 @@ Commands: ADD, QUIT, DELETE, PRINT
 #include <vector>
 
 
-typedef struct{
+typedef struct{ // stores data for a single student
 	char first_name[256];
 	char last_name[256];
 	int student_id;
 	float GPA;
 } student;
 
-typedef std::vector<student> student_list;
+typedef std::vector<student> student_list; // stores data for all students
 
 template<typename T>
-T get_type(){
+T get_type(){ // gets input of a type, ignoring all other types
 	T input;
 	while(!(std::cin >> input)){
 		std::cin.clear();
@@ -30,7 +30,7 @@ T get_type(){
 	return input;
 }
 
-void add(student_list* list){
+void add(student_list* list){ // add a student to the list
 	student s;
 
 	std::cout << "Enter a first name: ";
@@ -48,7 +48,7 @@ void add(student_list* list){
 	list->push_back(s);
 }
 
-void del(student_list* list){
+void del(student_list* list){ // remove a student from the list
 	student_list l = *list;
 	std::cout << "Enter a student id: ";
 	int id = get_type<int>();
@@ -63,11 +63,11 @@ void del(student_list* list){
 
 }
 
-void print_student(student* s){
+void print_student(student* s){ // print a single student
 	std::cout << "First Name: " << s->first_name << ", Last Name: " << s->last_name << ", Student ID: " << s->student_id << ", GPA: " << std::setprecision(3) << s->GPA << "\n";
 }
 
-void print(student_list* list){
+void print(student_list* list){ // print all of the students
 	for(int i = 0; i < list->size(); i++){
 		student s = list->at(i);
 		print_student(&s);
@@ -80,8 +80,9 @@ int main(){
 	char input[10];
 	while(true){
 		std::cout << "Enter A Command (ADD, QUIT, DELETE, PRINT): ";
-		std::cin >> input;
+		std::cin >> input; // get input
 
+		// parse input
 		if(strcmp(input, "ADD") == 0){
 			add(&students);
 		}
@@ -99,7 +100,5 @@ int main(){
 
 	}
 
-	add(&students);
-	print(&students);
 
 }
