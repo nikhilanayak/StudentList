@@ -5,10 +5,12 @@ Description: A program written in c++ that serves as an interface and database f
 Commands: ADD, QUIT, DELETE, PRINT
 */
 
+#include <limits>
 #include <cstring>
 #include <iostream>
 #include <iomanip>
 #include <vector>
+#include <algorithm>
 
 
 typedef struct{ // stores data for a single student
