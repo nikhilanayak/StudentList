@@ -5,6 +5,7 @@ Description: A program written in c++ that serves as an interface and database f
 Commands: ADD, QUIT, DELETE, PRINT
 */
 
+#include <cstring>
 #include <iostream>
 #include <iomanip>
 #include <vector>
